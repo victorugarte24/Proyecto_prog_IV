@@ -29,7 +29,7 @@ void iniciar_programa(){
 		iniciar_menu();
 	}
 	if(opcion == 4){
-		iniciar_menu();
+		exit(0);
 	}
 }
 

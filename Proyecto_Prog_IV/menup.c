@@ -6,10 +6,11 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include "estadio.h"
 
 void iniciar_menu(){
 	int opcion;
-	printf(" --------------------------\n ");
+	printf("--------------------------\n ");
 	printf("¡Seleccione una opción para continuar! \n");
 	printf("1. Compra de entradas  \n");
 	printf("2. Consultar datos sobre los estadios  \n");
@@ -23,7 +24,7 @@ void iniciar_menu(){
 
 	}
 	if(opcion == 2){
-
+		menu_estadios();
 	}
 	if(opcion == 3){
 
