@@ -68,11 +68,23 @@ void menu_estadios(){
 		printf("Año creación: %i \n", estadios[opcion -1].anyoCreacion);
 		printf("Aforo: %i \n", estadios[opcion -1].aforo);
 		printf("Pulse 1 para volver atrás\n");
-		int pulsar = 0;
+		int pulsar;
 		fflush(stdout);
 		scanf("%i", &pulsar);
-		if(opcion == 1){
+		if(pulsar == 1){
 			menu_estadios();
+		}
+		else{
+			while (!(pulsar == 1))
+			{
+				printf("No ha pulsado el botón 1\n");
+				printf("Pulse 1 para volver atrás\n");
+				fflush(stdout);
+				scanf("%i", &pulsar);
+				if(pulsar == 1){
+					menu_estadios();
+				}
+			}
 		}
 
 	}

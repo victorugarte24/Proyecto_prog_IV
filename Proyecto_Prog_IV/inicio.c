@@ -19,6 +19,15 @@ void iniciar_programa(){
 	scanf("%i", &opcion);
 	printf("Has seleccionado la opción %i \n ", opcion);
 
+	if(!(opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4)){
+		while (!(opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4))
+		{
+			printf("No ha pulsado ninguna opción correcta\n");
+			fflush(stdout);
+			scanf("%i", &opcion);
+		}
+	}
+
 	if(opcion == 1){
 
 	}
