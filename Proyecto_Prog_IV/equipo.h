@@ -10,21 +10,21 @@
 #include <stdio.h>
 
 typedef struct{
-	char *nombre;
-	char *ciudad;
-	char *provincia;
+	char nombre[20];
+	char ciudad[20];
+	char provincia[20];
 	int anyoFundacion;
-	char *estadio;
+	char estadio[20];
 }Equipo;
 
-Equipo elegirEquipo(Equipo *, int);
+void mostrarDatosEquipo();
 
-void mostrarCiudadEquipo(Equipo *);
+void mostrarCiudadEquipo(Equipo);
 
-void mostrarProvinciaEquipo(Equipo *);
+void mostrarProvinciaEquipo(Equipo);
 
-void mostrarAnyoFundacionEquipo(Equipo *);
+void mostrarAnyoFundacionEquipo(Equipo);
 
-void mostrarEstadioEquipo(Equipo *);
+void mostrarEstadioEquipo(Equipo);
 
 #endif /* EQUIPO_H_ */
