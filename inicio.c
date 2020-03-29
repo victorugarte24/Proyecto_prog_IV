@@ -1,20 +1,24 @@
 /*
  * inicio.c
  *
- *  Created on: 25 mar. 2020
+ *  Created on: 21 mar. 2020
  *      Author: Victor
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include "menup.h"
 
-void iniciar_programa(){
-	int opcion;
+void imprimir_inicio(){
 	printf("¡Bienvenido, seleccione una opción para continuar! \n");
 	printf("1. Iniciar sesión  \n");
 	printf("2. Registrarse  \n");
 	printf("3. Continuar sin registrarse  \n");
 	printf("4. Salir  \n");
+}
+
+void iniciar_programa(){
+	int opcion;
+	imprimir_inicio();
 	fflush(stdout);
 	scanf("%i", &opcion);
 	printf("Has seleccionado la opción %i \n ", opcion);

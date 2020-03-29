@@ -14,10 +14,7 @@
 
 int main(void)
 {
-//iniciar_programa();
-cargar_equipos();
-cargar_partidos();
-menu_partidos();
+iniciar_programa();
 
 }
 

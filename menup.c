@@ -1,15 +1,14 @@
 /*
  * menup.c
  *
- *  Created on: 25 mar. 2020
+ *  Created on: 21 mar. 2020
  *      Author: Victor
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include "estadio.h"
 
-void iniciar_menu(){
-	int opcion;
+void imprimir_menu(){
 	printf("--------------------------\n ");
 	printf("¡Seleccione una opción para continuar! \n");
 	printf("1. Compra de entradas  \n");
@@ -17,6 +16,11 @@ void iniciar_menu(){
 	printf("3. Consultar resultados de los últimos partidos  \n");
 	printf("4. Consultar datos del equipo  \n");
 	printf("5. Salir  \n");
+}
+
+void iniciar_menu(){
+	int opcion;
+	imprimir_menu();
 	fflush(stdout);
 	scanf("%i", &opcion);
 	printf("Has seleccionado la opción %i \n ", opcion);
@@ -30,7 +34,7 @@ void iniciar_menu(){
 		}
 	}
 	if(opcion == 1){
-
+		comprar_entradas();
 	}
 	if(opcion == 2){
 		menu_estadios();
@@ -45,3 +49,4 @@ void iniciar_menu(){
 		exit(0);
 	}
 }
+

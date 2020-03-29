@@ -12,7 +12,6 @@
 
 void menu_estadios(){
 
-
 	Estadio bernabeu = {"Estadio Santiago Bernabéu", "Real Madrid", "Madrid", 1890, 81044};
 	Estadio campNou = {"Estadio Camp Nou", "F.C. Barcelona", "Barcelona", 1, 99354};
 	Estadio wanda = {"Estadio Wanda Metropolitano", "Atlético de Madrid", "Madrid", 1, 68456};
@@ -35,7 +34,7 @@ void menu_estadios(){
 	Estadio butarque = {"Estadio Municipal de Butarque", "CD Leganés", "Leganés",1 , 12454};
 
 	Estadio estadios[20] = {bernabeu,campNou,wanda,benitoVillamarin,sanMames,mestalla,pizjuan,rcdeEstadium,realeArena,balaidos,joseZorrilla,ciutatValencia,
-	ceramica,sonMoix,mendizorroza,losCarmenes,sadar,coliseum,ipurua,butarque};
+			ceramica,sonMoix,mendizorroza,losCarmenes,sadar,coliseum,ipurua,butarque};
 
 	int opcion;
 	printf("--------------------------\n ");
@@ -86,9 +85,7 @@ void menu_estadios(){
 				}
 			}
 		}
-
 	}
-
 }
 
 
