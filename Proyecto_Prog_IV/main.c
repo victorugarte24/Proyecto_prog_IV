@@ -8,10 +8,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "inicio.h"
+#include "equipo.h"
+#include "estadio.h"
+#include "partido.h"
 
 int main(void)
 {
-iniciar_programa();
+//iniciar_programa();
+cargar_equipos();
+cargar_partidos();
+menu_partidos();
 
 }
 

@@ -10,10 +10,16 @@
 #include "equipo.h"
 
 typedef struct{
-	char *equipoLocal;
-	char *equipoVisitante;
+	 Equipo eqLocal;
+	 Equipo eqVisitante;
+	 char hora[20];
+	 char estadio[20];
 }Partido;
 
-void mostrarEquipos(Partido p);
+
+Partido partidos[10];
+
+void cargar_partidos();
+void menu_partidos();
 
 #endif /* PARTIDO_H_ */

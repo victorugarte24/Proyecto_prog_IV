@@ -8,9 +8,8 @@
 #include "equipo.h"
 #include <stdio.h>
 #include <string.h>
-#define MAX_LINE 10
 
-void menu_equipos(){
+void cargar_equipos(){
 
 	Equipo realMadrid = {"Real Madrid", "Madrid", "Madrid", 1902, "Santiago Bernabéu"};
 	Equipo barcelona = {"F.C. Barcelona", "Barcelona", "Barcelona", 1899, "Camp Nou"};
@@ -33,9 +32,29 @@ void menu_equipos(){
 	Equipo eibar = {"SD Eibar", "Eibar", "Guipuzcoa", 1940, "Ipurua"};
 	Equipo leganes = {"CD Leganés", "Leganés", "Madrid", 1928, "Butarque"};
 
-	Equipo equipos[20] = {realMadrid,barcelona,atleticoMadrid,betis,athleticClub,valencia,sevilla,espanyol,realSociedad,celta,valladolid,levante,
-	villarreal,mallorca,alaves,granada,osasuna,getafe,eibar,leganes};
+	equipos[iDrealMadrid] = realMadrid;
+	equipos[iDbarcelona] = barcelona;
+	equipos[iDatleticoMadrid] = atleticoMadrid;
+	equipos[iDbetis] = betis;
+	equipos[iDathleticClub] = athleticClub;
+	equipos[iDvalencia] = valencia;
+	equipos[iDsevilla] = sevilla;
+	equipos[iDespanyol] = espanyol;
+	equipos[iDrealSociedad] = realSociedad;
+	equipos[iDcelta] = celta;
+	equipos[iDvalladolid] = valladolid;
+	equipos[iDlevante] = levante;
+	equipos[iDvillarreal] = villarreal;
+	equipos[iDmallorca] = mallorca;
+	equipos[iDalaves] = alaves;
+	equipos[iDgranada] = granada;
+	equipos[iDosasuna] = osasuna;
+	equipos[iDgetafe] = getafe;
+	equipos[iDeibar] = eibar;
+	equipos[iDleganes] = leganes;
+}
 
+void menu_equipos(){
 	int opcion;
 	printf("--------------------------\n ");
 	printf("¡Seleccione un equipo para ver sus detalles! \n");
@@ -88,8 +107,6 @@ void menu_equipos(){
 
 	}
 
-	void mostrarDatosEquipo(){
-
-	}
 }
+
 
