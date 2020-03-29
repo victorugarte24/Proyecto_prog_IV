@@ -55,6 +55,7 @@ void cargar_equipos(){
 }
 
 void menu_equipos(){
+	cargar_equipos();
 	int opcion;
 	printf("--------------------------\n ");
 	printf("¡Seleccione un equipo para ver sus detalles! \n");

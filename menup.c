@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "estadio.h"
+#include "equipo.h"
+#include "entradas.h"
 
 void imprimir_menu(){
 	printf("--------------------------\n ");
@@ -40,10 +42,10 @@ void iniciar_menu(){
 		menu_estadios();
 	}
 	if(opcion == 3){
-
+		menu_partidos();
 	}
 	if(opcion == 4){
-
+		menu_equipos();
 	}
 	if(opcion == 5){
 		exit(0);
