@@ -42,7 +42,7 @@ void iniciar_menu(){
 		menu_estadios();
 	}
 	if(opcion == 3){
-		menu_partidos();
+		imprimir_jornada_anterior();
 	}
 	if(opcion == 4){
 		menu_equipos();

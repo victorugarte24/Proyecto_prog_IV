@@ -18,10 +18,12 @@ typedef struct{
 
 
 Partido partidos[10];
+Partido partidos_jornada_anterior[10];
 void imprimir_partidos();
 void imprimir_partido(int i);
 void cargar_partidos();
 void menu_partidos();
 Partido devolver_partido(int partido);
+void imprimir_jornada_anterior();
 
 #endif /* PARTIDO_H_ */

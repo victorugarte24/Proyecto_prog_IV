@@ -4,10 +4,66 @@
  *  Created on: 24 mar. 2020
  *      Author: Diego
  */
-
+#include <stdlib.h>
 #include <stdio.h>
 #include "partido.h"
 #include "equipo.h"
+#include "menup.h"
+
+void imprimir_jornada_anterior(){
+	cargar_equipos();
+	cargar_partidos();
+	int opcion;
+	Partido p1 = {equipos[iDleganes], equipos[iDatleticoMadrid], "20:30", equipos[iDleganes].estadio};
+	Partido p2 = {equipos[iDbarcelona], equipos[iDathleticClub], "18:30", equipos[iDbarcelona].estadio};
+	Partido p3 = {equipos[iDbetis], equipos[iDsevilla], "21:00", equipos[iDbetis].estadio};
+	Partido p4 = {equipos[iDvalencia], equipos[iDespanyol], "12:00", equipos[iDsevilla].estadio};
+	Partido p5 = {equipos[iDrealSociedad], equipos[iDcelta], "16:30", equipos[iDrealSociedad].estadio};
+	Partido p6 = {equipos[iDmallorca], equipos[iDlevante], "19:00", equipos[iDmallorca].estadio};
+	Partido p7 = {equipos[iDvillarreal], equipos[iDvalladolid], "13:30", equipos[iDvillarreal].estadio};
+	Partido p8 = {equipos[iDgetafe], equipos[iDgranada], "18:00", equipos[iDgetafe].estadio};
+	Partido p9 = {equipos[iDosasuna], equipos[iDalaves], "14:00", equipos[iDosasuna].estadio};
+	Partido p10 = {equipos[iDeibar], equipos[iDrealMadrid], "20:00", equipos[iDeibar].estadio};
+
+	partidos_jornada_anterior[0] = p1;
+	partidos_jornada_anterior[1] = p2;
+	partidos_jornada_anterior[2] = p3;
+	partidos_jornada_anterior[3] = p4;
+	partidos_jornada_anterior[4] = p5;
+	partidos_jornada_anterior[5] = p6;
+	partidos_jornada_anterior[6] = p7;
+	partidos_jornada_anterior[7] = p8;
+	partidos_jornada_anterior[8] = p9;
+	partidos_jornada_anterior[9] = p10;
+	int e = 1;
+	int i;
+	for (i = 0; i < 10; ++i)
+	{
+		int g1 = rand()%10;
+		int g2 = rand()%10;
+		printf("%d. %s - %s %i - %i\n", e, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre, g1, g2);
+		e = e +1;
+	}
+	printf("Pulse 1 para volver atrás\n");
+	fflush(stdout);
+	scanf("%i", &opcion);
+	if(opcion == 1){
+		iniciar_menu();
+	}
+	else{
+		while (!(opcion == 1))
+		{
+			printf("No ha pulsado el botón 1\n");
+			printf("Pulse 1 para volver atrás\n");
+			fflush(stdout);
+			scanf("%i", &opcion);
+			if(opcion == 1){
+				iniciar_menu();
+			}
+		}
+	}
+
+}
 
 Partido devolver_partido(int partido){
 	return partidos[partido];
