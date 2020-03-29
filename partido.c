@@ -126,7 +126,7 @@ void menu_partidos(){
 	if(opcion == 11){
 		printf("Has seleccionado la opción %i \n ", opcion);
 	} else{
-		printf("Has seleccionado la opción %i: %s - %s \n", opcion, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre);
+		printf("Has seleccionado la opción %i: %s - %s \n", opcion, partidos[opcion-1].eqLocal.nombre, partidos[opcion-1].eqVisitante.nombre);
 	}
 
 	printf("---------------------------\n");
