@@ -1,4 +1,4 @@
 Previsualización del Pago
-Precio entrada: 30 
+Precio entrada: 30 Euros
 Número de entradas: 1
-Precio Total: 30
+Precio Total: 30 Euros

@@ -1,7 +1,7 @@
 /*
  * entradas.c
  *
- *  Created on: 26 mar. 2020
+ *  Created on: 20 mar. 2020
  *      Author: Victor
  */
 
@@ -12,20 +12,22 @@
 #include <unistd.h>
 #include <time.h>
 
-void imprimir_ticket(Entradas entrada){
+void imprimir_ticket(Entradas entrada, int partido){
 
 	FILE * fp;
 	fp = fopen ("Ticket.txt","w");
 	fprintf (fp, "Previsualización del Pago\n");
-	fprintf (fp, "Precio entrada: %i \n", entrada.precioEntrada);
+	fprintf (fp, "Precio entrada: %i Euros\n", entrada.precioEntrada);
 	fprintf (fp, "Número de entradas: %i\n", entrada.numEntradas);
-	fprintf (fp, "Precio Total: %i\n", entrada.PrecioTotal);
+	fprintf (fp, "Precio Total: %i Euros\n", entrada.PrecioTotal);
 	fclose (fp);
 
 }
 
-void imprimir_entrada(Entradas entrada){
+void imprimir_entrada(Entradas entrada, int partido){
 	printf("Previsualización de entrada: \n");
+	printf("Partido: ");
+	imprimir_partido(partido);
 	printf("Sector: %s \n", entrada.Sector);
 	printf("Fila: %i \n", entrada.numFila);
 	printf("Número de entradas: %i \n", entrada.numEntradas);
@@ -66,21 +68,21 @@ void comprar_entradas(){
 	int precioEntrada;
 	int precioTotal;
 	int array[10] = {1,2,3,4,5,6,7,8,9,10};
-	char *arraySectores[4] = {"Fondo Norte", "Fondo Sur", "Lateral Este", "Lateral Oeste"};
+	char *arraySectores[4] = {" Fondo Norte", " Fondo Sur", " Lateral Este", " Lateral Oeste"};
 
 	printf("Seleccione un partido:\n");
-	printf("Partidos...\n");
+	imprimir_partidos();
 	fflush(stdout);
 	scanf("%i", &partido);
 	printf("Seleccione un sector del estadio:\n");
 	for (e = 0; e < 4; e++)
 	{
-		printf(" %s \n", arraySectores[e]);
+		printf("%i. %s \n", e+1,arraySectores[e]);
 	}
 	fflush(stdout);
 	scanf("%i", &sector);
 	printf("Seleccione una fila disponble:\n");
-	for (int i = 0; i < 10; i++) {    // shuffle array
+	for (int i = 0; i < 10; i++) {
 	    int temp = array[i];
 	    int randomIndex = rand() % 10;
 
@@ -89,7 +91,7 @@ void comprar_entradas(){
 	}
 	for (i = 0; i < 4; i++)
 	{
-		printf("%d \n", array[i]);
+		printf("%i. %d \n", i+1,array[i]);
 	}
 	fflush(stdout);
 	scanf("%i", &fila);
@@ -100,7 +102,7 @@ void comprar_entradas(){
 	precioEntrada = calcular_precio(sector, fila);
 	precioTotal = precioEntrada * numEntradas;
 	Entradas entrada = {numEntradas, fila, arraySectores[sector - 1], precioEntrada, precioTotal};
-	imprimir_entrada(entrada);
+	imprimir_entrada(entrada, partido -1);
 	printf("Presione 1 para confirmar o 2 para cancelar\n");
 	fflush(stdout);
 	scanf("%i", &confirmar);
@@ -113,7 +115,7 @@ void comprar_entradas(){
 		}
 	}
 	if(confirmar == 1){
-		imprimir_ticket(entrada);
+		imprimir_ticket(entrada, partido -1);
 		realizar_pago();
 	}else{
 		comprar_entradas();

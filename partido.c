@@ -9,6 +9,27 @@
 #include "partido.h"
 #include "equipo.h"
 
+Partido devolver_partido(int partido){
+	return partidos[partido];
+}
+
+void imprimir_partido(int i){
+	printf(" %s - %s \n", partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre);
+
+}
+
+void imprimir_partidos(){
+	cargar_equipos();
+	cargar_partidos();
+	int e = 1;
+	int i;
+	for (i = 0; i < 10; ++i)
+	{
+		printf("%d. %s - %s \n", e, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre);
+		e = e +1;
+	}
+}
+
 void cargar_partidos(){
 
 	Partido p1 = {equipos[iDrealMadrid], equipos[iDbarcelona], "20:30", equipos[iDrealMadrid].estadio};
@@ -35,56 +56,51 @@ void cargar_partidos(){
 }
 
 void menu_partidos(){
-
+	cargar_equipos();
+	cargar_partidos();
+	int i;
 	int opcion;
-		printf("-------------------------\n ");
-		printf("¡Seleccione un partido para ver sus detalles! \n");
-		int i;
-		int e = 1;
-		for (i = 0; i < 10; ++i)
-		{
-			printf("%d. %s - %s \n", e, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre);
-			e = e +1;
-		}
+	printf("-------------------------\n ");
+	printf("¡Seleccione un partido para ver sus detalles! \n");
+	imprimir_partidos();
+	printf("11. Atras\n");
 
-		printf("11. Atras\n");
+	fflush(stdout);
+	scanf("%i", &opcion);
+	if(opcion == 11){
+		printf("Has seleccionado la opción %i \n ", opcion);
+	} else{
+		printf("Has seleccionado la opción %i: %s - %s \n", opcion, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre);
+	}
 
+	printf("---------------------------\n");
+	if(opcion == 11){
+		iniciar_menu();
+	} else{
+		printf("Equipo Local: %s \n", partidos[opcion -1].eqLocal.nombre);
+		printf("Equipo Visitante: %s \n", partidos[opcion -1].eqVisitante.nombre);
+		printf("Hora: %s \n", partidos[opcion -1].hora);
+		printf("Estadio: %s \n", partidos[opcion -1].eqLocal.estadio);
+		printf("Pulse 1 para volver atrás\n");
+		int pulsar;
 		fflush(stdout);
-		scanf("%i", &opcion);
-		if(opcion == 11){
-			printf("Has seleccionado la opción %i \n ", opcion);
-		} else{
-			printf("Has seleccionado la opción %i: %s - %s \n", opcion, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre);
+		scanf("%i", &pulsar);
+		if(pulsar == 1){
+			menu_partidos();
 		}
-
-		printf("---------------------------\n");
-		if(opcion == 11){
-			iniciar_menu();
-		} else{
-			printf("Equipo Local: %s \n", partidos[opcion -1].eqLocal.nombre);
-			printf("Equipo Visitante: %s \n", partidos[opcion -1].eqVisitante.nombre);
-			printf("Hora: %s \n", partidos[opcion -1].hora);
-			printf("Estadio: %s \n", partidos[opcion -1].eqLocal.estadio);
-			printf("Pulse 1 para volver atrás\n");
-			int pulsar;
-			fflush(stdout);
-			scanf("%i", &pulsar);
-			if(pulsar == 1){
-				menu_partidos();
-			}
-			else{
-				while (!(pulsar == 1))
-				{
-					printf("No ha pulsado el botón 1\n");
-					printf("Pulse 1 para volver atrás\n");
-					fflush(stdout);
-					scanf("%i", &pulsar);
-					if(pulsar == 1){
-						menu_partidos();
-					}
+		else{
+			while (!(pulsar == 1))
+			{
+				printf("No ha pulsado el botón 1\n");
+				printf("Pulse 1 para volver atrás\n");
+				fflush(stdout);
+				scanf("%i", &pulsar);
+				if(pulsar == 1){
+					menu_partidos();
 				}
 			}
-
 		}
+
+	}
 
 }

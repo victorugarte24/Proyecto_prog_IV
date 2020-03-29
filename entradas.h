@@ -1,7 +1,7 @@
 /*
  * entradas.h
  *
- *  Created on: 26 mar. 2020
+ *  Created on: 20 mar. 2020
  *      Author: Victor
  */
 
@@ -20,8 +20,8 @@ typedef struct{
 
 }Entradas;
 
-void imprimir_ticket(Entradas entrada);
-void imprimir_entrada();
+void imprimir_ticket(Entradas entrada, int partido);
+void imprimir_entrada(Entradas entrada, int partido);
 void comprar_entradas();
 int calcular_precio(int Sector, int numFila);
 
