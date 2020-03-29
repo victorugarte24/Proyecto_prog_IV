@@ -8,10 +8,6 @@
 #include <stdio.h>
 #include "partido.h"
 
-void mostrarResultado(Partido p){
-	printf("\nResultado: \n G: %i VS. P: %i\n", p.golesGanador, p.golesPerdedor);
-}
-
 void mostrarEquipos(Partido p){
-	printf("\nEquipos: \n G: %s VS. P: %s\n", p.equipoGanador, p.equipoPerdedor);
+	printf("\nEquipos: \n %s - %s \n", p.equipoLocal, p.equipoVisitante);
 }

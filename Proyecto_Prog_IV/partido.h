@@ -7,15 +7,12 @@
 
 #ifndef PARTIDO_H_
 #define PARTIDO_H_
+#include "equipo.h"
 
 typedef struct{
-	char *golesGanador;
-	char *golesPerdedor;
-	char *equipoGanador;
-	char *equipoPerdedor;
+	char *equipoLocal;
+	char *equipoVisitante;
 }Partido;
-
-void mostrarResultado(Partido p);
 
 void mostrarEquipos(Partido p);
 
