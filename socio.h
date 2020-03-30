@@ -21,8 +21,8 @@ typedef struct {
 
 Socio socios[20];
 void inicializarSocios();
-void nuevoSocio();
-void iniciarSesion();
+void nuevoSocio(int numerosSocio);
+void iniciarSesion(int numerosSocio);
 void mostrarTodosDatosSocio(Socio s);
 void mostrarDniSocio(Socio s);
 void mostrarTelefonoSocio(Socio s);

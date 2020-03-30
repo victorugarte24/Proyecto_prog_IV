@@ -15,18 +15,16 @@ void inicializarSocios(){
 	Socio socio1 = {0, "Mikel", "Castro", "79589273C", 64893837, "11/04/1999", "Mikel123", "Athletic de Bilbao"};
 	Socio socio2 = {1,  "Diego", "Presa", "68892743M", 64837467, "21/10/1999", "Diego123", "F.C. Barcelona"};
 	Socio socio3 = {2, "Victor", "Ugarte", "62092743D",64345667, "10/11/1999", "Victor123", "F.C. Barcelona"};
-	Socio socio4 = {3, "Mikel", "Castro", "79589273C", 64893837, "11/04/1999", "Mikel123", "Athletic de Bilbao"};
+	Socio socio4 = {3, "Iñigo", "Marcos", "45679273C", 64893837, "11/04/1999", "Mikel123", "Athletic de Bilbao"};
 
-	socios[0]=socio1;
-	socios[1]=socio2;
-	socios[2]=socio3;
-	socios[3]=socio4;
-
-	printf("ID: %i\n", sizeof(socios));
+	socios[0] = socio1;
+	socios[1] = socio2;
+	socios[2] = socio3;
+	socios[3] = socio4;
 }
 
 
-void nuevoSocio(){
+void nuevoSocio(int numerosSocio){
 
 	char str[20];
 	int id;
@@ -37,9 +35,6 @@ void nuevoSocio(){
 	char fechaNacimiento[20];
 	char contrasenya[20];
 	char nombreEquipo[20];
-
-	inicializarSocios();
-	printf("ID: %i\n", sizeof(socios));
 
 	printf("NOMBRE: \n");
 	fflush(stdout);
@@ -77,7 +72,7 @@ void nuevoSocio(){
 	fgets(str, 20, stdin);
 	sscanf(str, "%s", &nombreEquipo);
 
-	id = sizeof(socios) + 1;
+	id = numerosSocio;
 	Socio s;
 	s.idSocio = id;
 	strcpy(s.nombre, nombre);
@@ -89,17 +84,10 @@ void nuevoSocio(){
 	strcpy(s.contrasenya, contrasenya);
 	strcpy(s.equipo, nombreEquipo);
 
-	printf("ID: %i\n", s.idSocio);
-	printf("Nombre: %s\n", s.nombre);
-	printf("Apellido: %s\n", s.apellido);
-	printf("DNI: %s\n", s.dni);
-	printf("Telefono: %i\n", s.telefono);
-	printf("Fecha nacimiento: %s\n", s.fechaNacimiento);
-	printf("Nombre de tu Equipo: %s", s.equipo);
-
+	socios[numerosSocio]=s;
 }
 
-void iniciarSesion(){
+void iniciarSesion(int numerosSocio){
 	char str[20];
 	char dni[20];
 	char contrasenya[20];
@@ -115,7 +103,7 @@ void iniciarSesion(){
 	fgets(str, 20, stdin);
 	sscanf(str, "%s", &contrasenya);
 
-	for(int i =0; i<4;i++){
+	for(int i =0; i<numerosSocio;i++){
 		if(strcmp(socios[i].dni,dni)==0)localizador = i;
 	}
 

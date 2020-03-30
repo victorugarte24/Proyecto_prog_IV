@@ -18,6 +18,7 @@ void imprimir_inicio(){
 
 void iniciar_programa(){
 	int opcion;
+	int numerosSocio = 4;
 	imprimir_inicio();
 	fflush(stdout);
 	scanf("%i", &opcion);
@@ -33,10 +34,11 @@ void iniciar_programa(){
 	}
 
 	if(opcion == 1){
-
+		iniciarSesion(numerosSocio);
+		numerosSocio++;
 	}
 	if(opcion == 2){
-
+		nuevoSocio(numerosSocio);
 	}
 	if(opcion == 3){
 		iniciar_menu();

@@ -13,6 +13,7 @@ int main(void)
 {
 	cargar_equipos();
 	cargar_partidos();
+	inicializarSocios();
 	iniciar_programa();
 
 }
