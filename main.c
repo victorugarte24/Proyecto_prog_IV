@@ -6,9 +6,13 @@
  */
 
 #include "inicio.h"
+#include "equipo.h"
+#include "partido.h"
 
 int main(void)
 {
-iniciar_programa();
+	cargar_equipos();
+	cargar_partidos();
+	iniciar_programa();
 
 }

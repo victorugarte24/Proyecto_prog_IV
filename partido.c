@@ -11,8 +11,6 @@
 #include "menup.h"
 
 void imprimir_jornada_anterior(){
-	cargar_equipos();
-	cargar_partidos();
 	int opcion;
 	Partido p1 = {equipos[iDleganes], equipos[iDatleticoMadrid], "20:30", equipos[iDleganes].estadio};
 	Partido p2 = {equipos[iDbarcelona], equipos[iDathleticClub], "18:30", equipos[iDbarcelona].estadio};
@@ -112,8 +110,6 @@ void cargar_partidos(){
 }
 
 void menu_partidos(){
-	cargar_equipos();
-	cargar_partidos();
 	int opcion;
 	printf("-------------------------\n ");
 	printf("¡Seleccione un partido para ver sus detalles! \n");
