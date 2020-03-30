@@ -8,6 +8,7 @@
 #include "inicio.h"
 #include "equipo.h"
 #include "partido.h"
+#include "socio.h"
 
 int main(void)
 {

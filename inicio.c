@@ -18,10 +18,12 @@ void imprimir_inicio(){
 
 void iniciar_programa(){
 	int opcion;
+	char str[20];
 	int numerosSocio = 4;
 	imprimir_inicio();
 	fflush(stdout);
-	scanf("%i", &opcion);
+	fgets(str, 20, stdin);
+	sscanf(str, "%i", &opcion);
 	printf("Has seleccionado la opción %i \n ", opcion);
 
 	if(!(opcion == 1 || opcion == 2 || opcion == 3 || opcion == 4)){

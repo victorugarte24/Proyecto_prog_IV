@@ -6,6 +6,7 @@
  */
 
 #include "socio.h"
+#include "menup.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -85,6 +86,7 @@ void nuevoSocio(int numerosSocio){
 	strcpy(s.equipo, nombreEquipo);
 
 	socios[numerosSocio]=s;
+	iniciar_menu();
 }
 
 void iniciarSesion(int numerosSocio){
@@ -93,22 +95,25 @@ void iniciarSesion(int numerosSocio){
 	char contrasenya[20];
 	int localizador;
 
+	printf("------------------\n");
+
 	printf("DNI:\n");
 	fflush(stdout);
 	fgets(str, 20, stdin);
-	sscanf(str, "%s", &dni);
+	sscanf(str, " %s", &dni);
 
 	printf("CONTRASEÑA:\n");
 	fflush(stdout);
 	fgets(str, 20, stdin);
-	sscanf(str, "%s", &contrasenya);
+	sscanf(str, " %s", &contrasenya);
 
-	for(int i =0; i<numerosSocio;i++){
+
+	for(int i = 0; i<numerosSocio;i++){
 		if(strcmp(socios[i].dni,dni)==0)localizador = i;
 	}
-
 	if (strcmp(socios[localizador].dni,dni)==0 && strcmp(socios[localizador].contrasenya,contrasenya)==0) {
-		printf("te has conectado");
+		printf("Te has conectado\n");
+		iniciar_menu();
 	} else {
 		printf("Contraseña incorrecta");
 	}
