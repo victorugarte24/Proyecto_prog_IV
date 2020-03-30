@@ -10,18 +10,19 @@
 
 typedef struct {
 	int idSocio;
-	char *nombre;
-	char *apellido;
-	char *dni;
+	char nombre[20];
+	char apellido[20];
+	char dni[20];
 	int telefono;
-	char *fechaNacimiento;
-	char *contrasenya;
-	//Equipo equipo;
+	char fechaNacimiento[20];
+	char contrasenya[20];
+	char equipo[20];
 } Socio;
 
-Socio* inicializarSocios();
-void nuevoSocio(Socio *s, int id);
-void iniciarSesion(Socio *s);
+Socio socios[20];
+void inicializarSocios();
+void nuevoSocio();
+void iniciarSesion();
 void mostrarTodosDatosSocio(Socio s);
 void mostrarDniSocio(Socio s);
 void mostrarTelefonoSocio(Socio s);
