@@ -44,24 +44,24 @@ void imprimir_jornada_anterior(){
 		printf("%d. %s - %s %i - %i\n", e, partidos[i].eqLocal.nombre, partidos[i].eqVisitante.nombre, g1, g2);
 		e = e +1;
 	}
-	printf("Pulse 1 para volver atrás\n");
+	printf("Pulse 11 para volver atrás\n");
 	fflush(stdout);
 	scanf("%i", &opcion);
-	if(opcion == 1){
+	if(opcion == 11){
 		iniciar_menu();
-	}
-	else{
-		while (!(opcion == 1))
+	}else{
+		while (!(opcion == 11))
 		{
-			printf("No ha pulsado el botón 1\n");
-			printf("Pulse 1 para volver atrás\n");
+			printf("No ha pulsado el botón 11\n");
+			printf("Pulse 11 para volver atrás\n");
 			fflush(stdout);
 			scanf("%i", &opcion);
-			if(opcion == 1){
+			if(opcion == 11){
 				iniciar_menu();
 			}
 		}
 	}
+
 
 }
 
@@ -114,7 +114,6 @@ void cargar_partidos(){
 void menu_partidos(){
 	cargar_equipos();
 	cargar_partidos();
-	int i;
 	int opcion;
 	printf("-------------------------\n ");
 	printf("¡Seleccione un partido para ver sus detalles! \n");
@@ -128,11 +127,9 @@ void menu_partidos(){
 	} else{
 		printf("Has seleccionado la opción %i: %s - %s \n", opcion, partidos[opcion-1].eqLocal.nombre, partidos[opcion-1].eqVisitante.nombre);
 	}
-
-	printf("---------------------------\n");
 	if(opcion == 11){
 		iniciar_menu();
-	} else{
+	}else{
 		printf("Equipo Local: %s \n", partidos[opcion -1].eqLocal.nombre);
 		printf("Equipo Visitante: %s \n", partidos[opcion -1].eqVisitante.nombre);
 		printf("Hora: %s \n", partidos[opcion -1].hora);
@@ -160,3 +157,5 @@ void menu_partidos(){
 	}
 
 }
+
+

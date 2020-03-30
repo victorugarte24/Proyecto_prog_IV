@@ -11,6 +11,7 @@
 #include "entradas.h"
 #include <unistd.h>
 #include <time.h>
+#include "menup.h"
 
 void imprimir_ticket(Entradas entrada, int partido){
 
@@ -72,8 +73,12 @@ void comprar_entradas(){
 
 	printf("Seleccione un partido:\n");
 	imprimir_partidos();
+	printf("Pulse 11 si desea cancelar la compra de entradas\n|");
 	fflush(stdout);
 	scanf("%i", &partido);
+	if(partido == 11){
+		iniciar_menu();
+	}
 	printf("Seleccione un sector del estadio:\n");
 	for (e = 0; e < 4; e++)
 	{
